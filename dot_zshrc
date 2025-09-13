@@ -38,4 +38,6 @@ export HSA_OVERRIDE_GFX_VERSION=10.3.0
 export DPRINT_INSTALL="/home/juann/.dprint"
 export PATH="$DPRINT_INSTALL/bin:$PATH"
 export PATH="/opt/quarto/1.8.24/bin:$PATH"
+export PATH="$HOME/.dprint/bin:$PATH"
+
 
