@@ -1,0 +1,41 @@
+# Created by newuser for 5.9
+autoload -Uz compinit
+zstyle ':completion:*' use-cache on
+compinit -d "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump-$ZSH_VERSION"
+zsh_plugins="${ZDOTDIR:-$HOME}/.zsh_plugins"
+[[ -f ${zsh_plugins}.txt ]] || touch ${zsh_plugins}.txt
+fpath=("$HOME/.antidote/functions" $fpath)
+autoload -Uz antidote
+if [[ ! ${zsh_plugins}.zsh -nt ${zsh_plugins}.txt ]]; then
+  antidote bundle <${zsh_plugins}.txt >! ${zsh_plugins}.zsh
+fi
+source ${zsh_plugins}.zsh
+
+if [[ $- == *i* ]]; then
+  eval "$(zoxide init zsh)"
+  eval "$(starship init zsh)"
+  # eval "$(atuin init zsh)"
+fi
+
+alias ls='eza --icons'
+alias battery='upower -i /org/freedesktop/UPower/devices/battery_BAT0'
+
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+
+autoload -Uz compinit
+compinit
+
+  . "$HOME/.cargo/env"
+  export PATH="$HOME/.local/bin:$PATH"
+
+# export PATH="$HOME/.npm-global/bin:$PATH"
+# export PATH="$HOME/go/bin:$PATH"# Created by newuser for 5.9
+export HSA_OVERRIDE_GFX_VERSION=10.3.0
+
+. "$HOME/.local/share/../bin/env"
+export DPRINT_INSTALL="/home/juann/.dprint"
+export PATH="$DPRINT_INSTALL/bin:$PATH"
+export PATH="/opt/quarto/1.8.24/bin:$PATH"
+

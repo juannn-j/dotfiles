@@ -1,0 +1,186 @@
+* {
+  border: none;
+  border-radius: 0px;
+  padding: 0;
+  margin: 0;
+  font-family: Iosevka Nerd Font;
+  font-weight: bold;
+  opacity: 0;
+  font-size: 15px;
+}
+
+window#waybar {
+  background: #000000;
+  /* border-top: 1px solid #3C3B3E; */
+}
+
+tooltip {
+  background: #27272a;
+  border: 1px solid #3C3B3E;
+}
+tooltip label {
+  margin: 5px;
+  color: #c9c7cd;
+}
+
+#workspaces {
+  padding-left: 15px;
+}
+#workspaces button {
+  color: #e6b99d; /* amarillo suave */
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-right: 10px;
+}
+#workspaces button.empty {
+  color: #c9c7cd;
+}
+#workspaces button.active {
+  color: #ED96B3; /* naranja/rojo brillante */
+}
+
+#clock {
+  color: #c9c7cd;
+}
+
+#tray {
+  margin-left: 10px;
+  color: #c9c7cd;
+}
+#tray menu {
+  background: #27272a;
+  border: 1px solid #3C3B3E;
+  padding: 8px;
+}
+#tray menuitem {
+  padding: 1px;
+}
+
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#disk,
+#battery,
+#language,
+#custom-notification {
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-right: 10px;
+  color: #c9c7cd;
+}
+
+#pulseaudio,
+#language {
+  margin-left: 15px;
+}
+
+#custom-notification {
+  margin-left: 15px;
+  padding-right: 2px;
+  margin-right: 5px;
+}
+
+#custom-launcher {
+  font-size: 20px;
+  color: #c9c7cd;
+  font-weight: bold;
+  margin-left: 15px;
+  padding-right: 10px;
+}
+
+* {
+  border: none;
+  border-radius: 0px;
+  padding: 0;
+  margin: 0;
+  font-family: Iosevka Nerd Font;
+  font-weight: bold;
+  opacity: 1;
+  font-size: 15px;
+}
+
+window#waybar {
+  background: #000000;
+}
+
+tooltip {
+  background: #27272a;
+  border: 1px solid #3C3B3E;
+}
+tooltip label {
+  margin: 5px;
+  color: #e0ccae; /* texto beige */
+}
+
+#workspaces {
+  padding-left: 15px;
+}
+#workspaces button {
+  color: #e6b99d; /* amarillo */
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-right: 10px;
+}
+#workspaces button.empty {
+  color: #e0ccae; /* gris claro */
+}
+#workspaces button.active {
+  color: #ED96B3; /* rosa */
+}
+
+#clock {
+  color: #e0ccae;
+}
+
+#tray {
+  margin-left: 10px;
+  color: #c9c7cd;
+}
+#tray menu {
+  background: #27272a;
+  border: 1px solid #3C3B3E;
+  padding: 8px;
+}
+#tray menuitem {
+  padding: 1px;
+}
+
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#battery,
+#language,
+#idle_inhibitor,
+#privacy {
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-right: 10px;
+  color: #c9c7cd;
+}
+
+#power-profiles-daemon {
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-right: 10px;
+  color: #c9c7cd;
+}
+
+
+#pulseaudio,
+#language {
+  margin-left: 15px;
+}
+
+#custom-launcher {
+  font-size: 20px;
+  color: #e0ccae;
+  font-weight: bold;
+  margin-left: 15px;
+  padding-right: 10px;
+}
+

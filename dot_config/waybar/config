@@ -1,0 +1,225 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": "20",
+
+  "modules-left": [
+    "hyprland/workspaces",
+    "hyprland/window",
+    "tray"
+  ],
+
+  "modules-center": [
+    "clock"
+  ],
+
+  "modules-right": [
+    "idle_inhibitor",
+    "privacy",
+    "network",
+    "power-profiles-daemon",
+    "cpu",
+    "memory",
+    "disk",
+    "temperature",
+    "pulseaudio",
+    "backlight",
+    "hyprland/language",
+    "battery",
+    "custom/notification"
+  ],
+
+  "hyprland/workspaces": {
+    "active-only": false,
+    "disable-scroll": true,
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "1": "I",
+      "2": "II",
+      "3": "III",
+      "4": "IV",
+      "5": "V",
+      "6": "VI",
+      "7": "VII",
+      "8": "VIII",
+      "9": "IX",
+     "10": "X"
+    },
+    "sort-by-number": true,
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": []
+    }
+  },
+
+  "tray": {
+    "icon-size": 20,
+    "spacing": 8
+  },
+
+  "clock": {
+    "calendar": {
+      "format": {
+        "today": "<span color='#90b99f'><b>{}</b></span>"
+      }
+    },
+    "format": " {:%H:%M}",
+    "tooltip": true,
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": " {:%d/%m}"
+  },
+
+  "idle_inhibitor": {
+    "format": "<span foreground='#ea83a5'>󰒳 </span>{status}",
+    "format-icons": {
+      "activated": " ",
+      "deactivated": " "
+    }
+  },
+
+  "privacy": {
+	"icon-spacing": 4,
+	"icon-size": 18,
+	"transition-duration": 250,
+	"modules": [
+	    {
+			"type": "screenshare",
+			"tooltip": true,
+			"tooltip-icon-size": 24
+		},
+		{
+			"type": "audio-out",
+			"tooltip": true,
+			"tooltip-icon-size": 24
+		},
+		{
+			"type": "audio-in",
+			"tooltip": true,
+			"tooltip-icon-size": 24
+		}
+	],
+	"ignore-monitor": true,
+	"ignore": [
+		{
+			"type": "audio-in",
+			"name": "cava"
+		},
+		{
+			"type": "screenshare",
+			"name": "obs"
+		}
+	]
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "<span foreground='#9ca2cf'> </span> {volume}%",
+    "format-icons": {
+      "default": ["<span foreground='#9ca2cf'> </span>"]
+    },
+    "scroll-step": 2,
+    "on-click": "pamixer -t",
+    "on-click-right": "pavucontrol"
+  },
+  
+  "network": {
+    "format-wifi": "<span foreground='#aca1cf'> </span>{signalStrength}%",
+    "format-ethernet": "<span foreground='#aca1cf'>󰀂 </span>",
+    "tooltip-format": "Connected to {essid} {ifname} via {gwaddr}",
+    "format-linked": "{ifname} (No IP)",
+    "format-disconnected": "<span foreground='#aca1cf'>󰖪 </span>"
+  },
+
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "<span foreground='#e6b99d'> </span>",
+      "performance": "<span foreground='#ea83a5'> </span>",
+      "balanced": "<span foreground='#90b99f'> </span>",
+      "power-saver": "<span foreground='#85b5ba'> </span>"
+    }
+  },
+
+  "cpu": {
+    "format": "<span foreground='#90b99f'> </span> {usage}%",
+    "format-alt": "<span foreground='#90b99f'> </span> {avg_frequency} GHz",
+    "interval": 2,
+    "on-click-right": "hyprctl dispatch exec '[float; center; size 950 650] kitty --override font_size=14 --title float_kitty btop'"
+  },
+
+  "memory": {
+    "format": "<span foreground='#85b5ba'>󰟜 </span>{}%",
+    "format-alt": "<span foreground='#85b5ba'>󰟜 </span>{used} GiB",
+    "interval": 2,
+    "on-click-right": "hyprctl dispatch exec '[float; center; size 950 650] kitty --override font_size=14 --title float_kitty btop'"
+  },
+
+  "disk": {
+    "format": "<span foreground='#ED96B3'>󰋊 </span>{percentage_used}%",
+    "interval": 60,
+    "on-click-right": "hyprctl dispatch exec '[float; center; size 950 650] kitty --override font_size=14 --title float_kitty btop'"
+  },
+
+  "temperature": {
+    "critical-threshold": 80,
+    "format": "<span foreground='#ea83a5'>{temperatureC}°C</span> {icon}",
+    "format-icons": ["", "", ""]
+  },
+
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "<span foreground='#e6b99d'>{percent}%</span> {icon}",
+    "format-icons": [" ", " "]
+  },
+
+  "hyprland/language": {
+    "format": "<span foreground='#e6b99d'> </span> {}",
+    "format-es": "ES",
+    "format-en": "US",
+    "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
+  },
+
+  "battery": {
+    "format": "<span foreground='#e6b99d'>{icon}</span> {capacity}%",
+    "format-icons": [" ", " ", " ", " ", " "],
+    "format-charging": "<span foreground='#e6b99d'> </span>{capacity}%",
+    "format-full": "<span foreground='#e6b99d'> </span>{capacity}%",
+    "format-warning": "<span foreground='#ea83a5'> </span>{capacity}%",
+    "interval": 5,
+    "states": {
+      "warning": 20
+    },
+    "format-time": "{H}h{M}m",
+    "tooltip": true,
+    "tooltip-format": "{time}"
+  },
+
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon} ",
+    "format-icons": {
+        "notification": " <span foreground='red'><sup> </sup></span>",
+        "none": " ",
+        "dnd-notification": " <span foreground='red'><sup> </sup></span>",
+        "dnd-none": " ",
+        "inhibited-notification": " <span foreground='red'><sup> </sup></span>",
+        "inhibited-none": " ",
+        "dnd-inhibited-notification": "<span foreground='red'><sup> </sup></span>",
+        "dnd-inhibited-none": " "
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  }
+
+}
+

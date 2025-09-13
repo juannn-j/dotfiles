@@ -1,0 +1,44 @@
+theme = "base16_transparent"
+
+[editor]
+end-of-line-diagnostics = "hint"
+clipboard-provider = "wayland"
+line-number = "relative"
+popup-border = 'popup'
+true-color = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.indent-guides]
+character = "▏"
+render = true
+skip-levels = 1
+
+[editor.soft-wrap]
+enable = true
+max-wrap = 25 
+max-indent-retain = 40
+wrap-indicator = "↪ "
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
+max-diagnostics = 10
+max-wrap = 20
+other-lines = "error"
+prefix-len = 1
+
+[editor.lsp]
+display-messages = true
+display-inlay-hints = true
+snippets = true
+
+[keys.normal]
+"C-m" = ':lsp-workspace-command'
+"C-p" = ':lsp-workspace-command tinymist.pinMain "%sh{realpath %{buffer_name}}"'
+
+
+[keys.normal.space]
+Z = ":toggle gutters.line-numbers.min-width 3 48"

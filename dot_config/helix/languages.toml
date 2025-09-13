@@ -1,0 +1,83 @@
+[[language]]
+name = "cpp"
+language-servers = ["clangd"]
+formatter = { command = "clang-format" }
+auto-format = true
+
+[[language]]
+name = "c-sharp"
+language-servers = ["csharp-ls"]
+formatter = { command = "csharpier" }
+text-width = 80
+soft-wrap = { enable = true, wrap-at-text-width = true }
+auto-format = true
+
+[[language]]
+name = "python"
+language-servers = ["pylsp"]
+formatter = { command = "black", args = ["--quiet", "-"] }
+text-width = 80
+soft-wrap = { enable = true, wrap-at-text-width = true }
+auto-format = true
+
+[[language]]
+name = "rust"
+language-servers = ["rust-analyzer"]
+formatter = { command = "rustfmt" }
+text-width = 80
+soft-wrap = { enable = true, wrap-at-text-width = true }
+auto-format = true
+
+[[language]]
+name = "markdown"
+language-servers = ["markdown-oxide"]
+formatter = { command = "dprint", args = ["fmt", "--stdin", "md"]}
+text-width = 80
+soft-wrap = { enable = true, wrap-at-text-width = true }
+auto-format = true
+
+[[language]]
+name = "nix"
+language-servers = ["nixd"]
+formatter = { command = "alejandra" }
+text-width = 80
+soft-wrap = { enable = true, wrap-at-text-width = true }
+auto-format = true
+
+[[language]]
+name = "quarto"
+language-servers = ["markdown-oxide", "pylsp"]
+file-types = ["qmd"]
+indent = { tab-width = 2, unit = "  " }
+text-width = 80
+soft-wrap = { enable = true, wrap-at-text-width = true }
+auto-format = true
+
+[[language]]
+name = "typst"
+language-servers = ["tinymist"]
+file-types = ["typ"]
+indent = { tab-width = 2, unit = "  " }
+text-width = 80
+soft-wrap = { enable = true, wrap-at-text-width = true }
+auto-format = true
+
+
+[language-server.tinymist]
+command = "tinymist"
+config.exportPdf = "onSave"
+# config.typstExtraArgs = ["my-main-file.typ"]
+config.preview.background.enabled = true
+config.preview.background.args = [
+  "--data-plane-host=127.0.0.1:0", "--invert-colors=never", "--open"]
+
+[[adapter]]
+name = "netcoredbg"
+type = "executable"
+command = "netcoredbg"
+args = ["--interpreter=vscode"]
+
+[[adapter]]
+name = "lldb-dap"
+type = "executable"
+command = "lldb-dap"
